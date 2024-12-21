@@ -1,0 +1,468 @@
+.hospital-locator-container {
+    display: flex;
+    height: calc(100vh - 80px);
+    margin-top: 80px;
+    background-color: #f8f9fa;
+    position: relative;
+    gap: 20px;
+    padding: 20px;
+}
+
+.sidebar {
+    width: 380px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.search-filters {
+    padding: 20px;
+    background-color: white;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #edf2f7;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    background-color: #f8fafc;
+}
+
+.search-input:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    background-color: white;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.filter-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #2d3748;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.filter-checkbox:hover {
+    background-color: #f7fafc;
+}
+
+.filter-checkbox input {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #3498db;
+}
+
+.hospital-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e0 #f8fafc;
+}
+
+.hospital-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.hospital-list::-webkit-scrollbar-track {
+    background: #f8fafc;
+}
+
+.hospital-list::-webkit-scrollbar-thumb {
+    background-color: #cbd5e0;
+    border-radius: 3px;
+}
+
+.hospital-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.hospital-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+}
+
+.hospital-card.selected {
+    border-color: #3498db;
+    background-color: #f8fafc;
+}
+
+.hospital-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.hospital-card h3 {
+    margin: 0;
+    color: #2d3748;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.distance {
+    background-color: #edf2f7;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #4a5568;
+    font-weight: 500;
+}
+
+.address {
+    color: #718096;
+    font-size: 14px;
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.hospital-details {
+    margin-top: 15px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+.icon {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.emergency-badge, .wheelchair-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-top: 8px;
+    margin-right: 8px;
+}
+
+.emergency-badge {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.wheelchair-badge {
+    background-color: #27ae60;
+    color: white;
+}
+
+.services {
+    margin-top: 15px;
+}
+
+.services h4 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+.service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.service-tag {
+    background-color: #e9ecef;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #2c3e50;
+}
+
+.map-container {
+    flex: 1;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.hospital-popup {
+    min-width: 280px;
+    padding: 16px;
+}
+
+.hospital-popup h3 {
+    margin: 0 0 12px 0;
+    color: #2d3748;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.hospital-popup p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+.hospital-status {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-badge.emergency {
+    background-color: #feb2b2;
+    color: #c53030;
+}
+
+.status-badge.accessible {
+    background-color: #9ae6b4;
+    color: #276749;
+}
+
+.directions-btn {
+    margin-top: 16px;
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.directions-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+.directions-btn:active {
+    transform: translateY(0);
+}
+
+.loading-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(247, 250, 252, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.loading-spinner {
+    width: 48px;
+    height: 48px;
+    border: 3px solid #e2e8f0;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 24px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.error-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.retry-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.retry-button:hover {
+    background-color: #2980b9;
+}
+
+@media (max-width: 1024px) {
+    .hospital-locator-container {
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .sidebar {
+        width: 340px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hospital-locator-container {
+        flex-direction: column;
+        padding: 12px;
+        gap: 12px;
+        height: calc(100vh - 64px);
+        margin-top: 64px;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: 45vh;
+    }
+
+    .map-container {
+        height: 45vh;
+    }
+
+    .hospital-card {
+        padding: 16px;
+    }
+}
+
+.distance-filter {
+    margin: 15px 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.distance-filter label {
+    display: block;
+    margin-bottom: 8px;
+    color: #2d3748;
+    font-weight: 500;
+}
+
+.distance-slider {
+    width: 100%;
+    height: 4px;
+    background: #e2e8f0;
+    border-radius: 2px;
+    -webkit-appearance: none;
+}
+
+.distance-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #3498db;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.distance-slider::-webkit-slider-thumb:hover {
+    background: #2980b9;
+    transform: scale(1.1);
+}
+
+.distance-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: #3498db;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.distance-slider::-moz-range-thumb:hover {
+    background: #2980b9;
+    transform: scale(1.1);
+}
+
+.distance-slider:focus {
+    outline: none;
+}
+
+.distance-slider::-webkit-slider-runnable-track {
+    height: 4px;
+    background: #e2e8f0;
+    border-radius: 2px;
+}
+
+.distance-slider::-moz-range-track {
+    height: 4px;
+    background: #e2e8f0;
+    border-radius: 2px;
+}
+
+/* Add a value bubble above the slider */
+.distance-filter {
+    position: relative;
+}
+
+.distance-filter::after {
+    content: attr(data-value) 'km';
+    position: absolute;
+    top: -25px;
+    right: 0;
+    background: #3498db;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+} 

@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7fa;
+}
+
+.navbar {
+    background: #ffffff;
+    padding: 1rem 5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.brand-logo {
+    margin-right: 0.5rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    border: 2px solid transparent;
+    cursor: pointer;
+    background: #ffffff;
+    color: #333;
+}
+
+.nav-link:hover {
+    background: #007BFF;
+    color: white;
+    border-color: #007BFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link.active {
+    background: #007BFF;
+    color: white;
+    border-color: #007BFF;
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.3);
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.login-btn, .register-btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.login-btn {
+    background: white;
+    color: #007BFF;
+    border: 2px solid #007BFF;
+}
+
+.login-btn:hover {
+    background: #e2e6ea;
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+}
+
+.register-btn {
+    background: #007BFF;
+    color: white;
+    border: none;
+}
+
+.register-btn:hover {
+    background: #0056b3;
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.3);
+}
+
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 1rem 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.6rem;
+    }
+    
+    .nav-link, .login-btn, .register-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+    }
+} 

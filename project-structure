@@ -1,0 +1,5 @@
+healthcare-management-system/
+├── client/                 # React frontend
+├── server/                 # Node.js backend
+├── postman/               # Postman collections
+└── docs/                  # Documentation and Medium article draft 
